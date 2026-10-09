@@ -25,13 +25,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .hero{background:var(--red);color:#0F1330;min-height:100vh;min-height:100svh;position:relative;overflow:hidden;display:flex;flex-direction:column}
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;position:relative;z-index:3}
 nav b{font-size:30px}nav .l{display:flex;gap:28px;font-weight:500;font-size:15px}nav .l a{text-decoration:none}
-.hb{flex:1;display:flex;align-items:center;position:relative;z-index:2;padding:24px 0 60px}
-.hc{max-width:min(700px,100%);padding-right:clamp(0px,16vw,220px)}
+.hb{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,38vw);align-items:center;gap:clamp(20px,4vw,64px);position:relative;z-index:2;padding:24px 0 60px}
+.hc{max-width:700px}
 .hero h1{font-size:clamp(64px,11.5vw,170px);margin:0 0 26px;max-width:8.5em}
 .hero h1 span{display:block;overflow:hidden;padding-bottom:.04em}.hero h1 i{display:block;font-style:normal}
 .hero p{max-width:470px;font-size:19px;font-weight:500;margin:0 0 28px}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-.hg{position:absolute;right:-7%;bottom:-4%;width:min(54vw,720px);color:#0F1330;z-index:1}
+.hg{position:relative;right:auto;bottom:auto;width:min(100%,560px);justify-self:end;align-self:end;color:#0F1330;z-index:1}
 .gate{display:block;width:100%;height:auto;overflow:visible}.gate *{fill:currentColor;transform-box:fill-box}
 .gate .s,.gate .k{transform-origin:center}.gate .p{transform-origin:bottom}.gate .n{transform-origin:center}
 .mq{background:#0F1330;color:var(--fg);overflow:hidden;white-space:nowrap;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -70,7 +70,7 @@ h2{font-size:clamp(46px,7vw,104px);margin:0 0 22px}
 .cta2 h2{font-size:clamp(60px,12vw,190px);margin:0 0 30px}
 .cta2 .cta{display:flex;gap:14px;flex-wrap:wrap}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:70px;font-size:14px;font-weight:500}
-@media(max-width:860px){.pg,.demo{grid-template-columns:1fr}.st{grid-template-columns:1fr 1fr}.hc{padding-right:0}.hg{right:-18%;bottom:-12%;width:88vw;opacity:.18}nav .l a:not(:last-child){display:none}}
+@media(max-width:860px){.pg,.demo,.hb{grid-template-columns:1fr}.st{grid-template-columns:1fr 1fr}.hc{padding-right:0}.hg{justify-self:center;align-self:center;width:min(82vw,460px);opacity:.22;margin-top:12px}nav .l a:not(:last-child){display:none}}
 @media(prefers-reduced-motion:reduce){.mq div{animation:none}.term div{animation:none}}
 </style>
 </head>
@@ -103,8 +103,8 @@ function Hero(){
     <nav><b class="d">Tori Labs</b><div class="l"><a href="#how">How it works</a><a href="#demo">Demo</a><a href="#vs">Compare</a><a href="#go"><b>Get started</b></a></div></nav>
     <div class="hb"><div class="hc"><h1 class="d"><span><i>Every sub-agent</i></span><span><i>goes through</i></span><span><i>the gate.</i></span></h1>
     <p>When an agent spawns a sub-agent, it inherits everything. Tori scopes each one so it cannot do more than you allowed, even if it goes rogue.</p>
-    <div class="cta"><a class="btn f" href="#go">Install the SDK</a><a class="btn" href="#demo">Break one live</a></div></div></div></div>
-    <div class="hg"><${Gate}/></div></header>`;
+    <div class="cta"><a class="btn f" href="#go">Install the SDK</a><a class="btn" href="#demo">Break one live</a></div></div>
+    <div class="hg"><${Gate}/></div></div></header>`;
 }
 
 function Marquee(){
